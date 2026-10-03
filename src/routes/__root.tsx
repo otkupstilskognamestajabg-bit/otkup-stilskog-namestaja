@@ -1,0 +1,71 @@
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+
+
+import '../styles.css'
+
+const siteName = 'Otkup polovnog i stilskog nameštaja | Beograd i cela Srbija'
+const siteDescription = 'Dajte svom nameštaju novu priču. Besplatna procena i fer otkup polovnog i stilskog nameštaja i antikviteta. Organizovan prevoz i isplata na licu mesta. 062 788 984.'
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        title: siteName,
+      },
+      {
+        name: 'description',
+        content: siteDescription,
+      },
+      {
+        property: 'og:title',
+        content: siteName,
+      },
+      {
+        property: 'og:description',
+        content: siteDescription,
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      { property: 'og:locale', content: 'sr_RS' },
+      { property: 'og:site_name', content: 'Otkup stilskog nameštaja' },
+      { property: 'og:url', content: 'https://grand-profiterole-c9a5c7.netlify.app/' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large' },
+      { name: 'theme-color', content: '#f8f9f5' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    ],
+    links: [
+      { rel: 'canonical', href: 'https://grand-profiterole-c9a5c7.netlify.app/' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap' },
+    ],
+  }),
+  shellComponent: RootDocument,
+})
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="sr-Latn">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  )
+}
