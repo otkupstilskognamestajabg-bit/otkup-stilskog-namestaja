@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /procena-form.html
+
+Sitemap: https://grand-profiterole-c9a5c7.netlify.app/sitemap.xml
